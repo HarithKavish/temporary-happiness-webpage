@@ -2,10 +2,14 @@
     --primary-color: #6a11cb;
     --secondary-color: #2575fc;
     --accent-color: #ff7e5f;
-    --light-color: #f8f9fa;
-    --dark-color: #212529;
+    --light-color: #333;
+    --dark-color: #f8f9fa;
     --success-color: #34d399;
     --transition-speed: 0.3s;
+    --text-color: #e0e0e0;
+    --bg-color: #121212;
+    --card-bg: #1e1e1e;
+    --shadow-color: rgba(0, 0, 0, 0.3);
 }
 
 * {
@@ -17,8 +21,8 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    color: var(--dark-color);
-    background-color: #f5f7fa;
+    color: var(--text-color);
+    background-color: var(--bg-color);
 }
 
 .container {
@@ -33,7 +37,7 @@ header {
     color: white;
     padding: 80px 0 40px;
     text-align: center;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 20px var(--shadow-color);
     position: relative;
     overflow: hidden;
 }
@@ -61,13 +65,13 @@ header {
     border-radius: 50px;
     cursor: pointer;
     transition: all var(--transition-speed) ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px var(--shadow-color);
 }
 
 .explore-btn:hover {
     background-color: #e74c3c;
     transform: translateY(-3px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 6px 12px var(--shadow-color);
 }
 
 @keyframes fadeIn {
@@ -81,24 +85,24 @@ main {
 
 section {
     margin-bottom: 80px;
-    background-color: white;
+    background-color: var(--card-bg);
     border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 15px var(--shadow-color);
     overflow: hidden;
 }
 
 section h2 {
     padding: 20px 30px;
-    background-color: var(--light-color);
-    border-bottom: 2px solid var(--primary-color);
+    background-color: var(--primary-color);
+    border-bottom: 2px solid var(--secondary-color);
     font-size: 2.2rem;
-    color: var(--primary-color);
+    color: white;
     margin-bottom: 30px;
     transition: all var(--transition-speed) ease;
 }
 
 section h2:hover {
-    background-color: var(--primary-color);
+    background-color: rgba(106, 17, 203, 0.9);
     color: white;
 }
 
@@ -115,15 +119,16 @@ section h2:hover {
 }
 
 .happiness-item, .effect-item, .tip-item {
-    background-color: var(--light-color);
+    background-color: var(--card-bg);
     padding: 30px;
     border-radius: 8px;
+    color: var(--text-color);
     transition: all var(--transition-speed) ease;
 }
 
 .happiness-item:hover, .effect-item:hover, .tip-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 20px var(--shadow-color);
 }
 
 .challenge-list {
@@ -134,10 +139,11 @@ section h2:hover {
 }
 
 .challenge-item {
-    background-color: white;
+    background-color: var(--card-bg);
     padding: 30px;
     border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    color: var(--text-color);
+    box-shadow: 0 2px 10px var(--shadow-color);
 }
 
 footer {
@@ -197,10 +203,4 @@ footer {
     .container {
         width: 98%;
     }
-}
-
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
 }
